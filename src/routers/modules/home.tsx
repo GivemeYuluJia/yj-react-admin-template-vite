@@ -6,7 +6,7 @@ import lazyLoad from "../LazyLoad";
 const homeRouter: Array<RouteObject> = [
   {
     path: "/home/index",
-    element: lazyLoad(React.lazy(() => import("@/views/Home/index"))),
+    element: lazyLoad(React.lazy(() => import("@/views/Home/index.tsx"))),
     meta: {
       requiresAuth: true,
       title: "首页",

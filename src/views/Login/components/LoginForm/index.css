@@ -1,0 +1,21 @@
+.login-form-container .ant-input-affix-wrapper {
+  color: #bfbfbf;
+}
+.login-form-container .login-btn-wrapper {
+  width: 100%;
+  margin-top: 10px;
+  white-space: nowrap;
+}
+.login-form-container .login-btn-wrapper .ant-form-item-control-input-content {
+  display: flex;
+  justify-content: space-between;
+}
+.login-form-container .login-btn-wrapper .ant-form-item-control-input-content .ant-btn {
+  width: 180px;
+}
+.login-form-container .login-btn-wrapper .ant-form-item-control-input-content .ant-btn span {
+  font-size: 14px;
+}
+.login-form-container .login-btn-wrapper .ant-form-item-control-input-content > .ant-btn + .ant-btn {
+  margin-left: 10px;
+}

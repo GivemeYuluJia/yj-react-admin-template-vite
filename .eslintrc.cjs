@@ -1,6 +1,6 @@
 module.exports = {
 	root: true,
-	env: { browser: true, es2020: true },
+	env: { browser: true, node: true, es2020: true },
 	/* 继承某些已有的规则 */
 	extends: [
 		'eslint:recommended',
@@ -10,7 +10,16 @@ module.exports = {
 		"plugin:prettier/recommended"
 	],
 	ignorePatterns: ['dist', '.eslintrc.cjs'],
-	parser: '@typescript-eslint/parser',
+  parser: '@typescript-eslint/parser',
+  /* 优先级低于 parse 的语法解析配置 */
+	parserOptions: {
+		ecmaVersion: 2020,
+		sourceType: "module",
+		jsxPragma: "React",
+		ecmaFeatures: {
+			jsx: true
+		}
+	},
 	plugins: ['react-refresh', '@typescript-eslint', 'react-hooks', "prettier"],
 	/*
 	   * "off" 或 0    ==>  关闭规则
@@ -18,10 +27,10 @@ module.exports = {
 	   * "error" 或 2  ==>  规则作为一个错误（代码不能执行，界面报错）
 	   */
 	rules: {
-		'react-refresh/only-export-components': [
-			'warn',
-			{ allowConstantExport: true },
-		],
+		// 'react-refresh/only-export-components': [
+		// 	'warn',
+		// 	{ allowConstantExport: true },
+		// ],
 		"no-var": "error", // 要求使用 let 或 const 而不是 var
 		"no-multiple-empty-lines": ["error", { max: 1 }], // 不允许多个空行
 		"no-use-before-define": "off", // 禁止在 函数/类/变量 定义之前使用它们

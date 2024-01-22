@@ -1,4 +1,20 @@
 import { RouteObject } from "@/routers/interface";
+
+/**
+ * @description 获取浏览器默认语言
+ * @return string
+ */
+export const getBrowserLang = () => {
+  let browserLang = navigator.language;
+  let defaultBrowserLang = "";
+  if (browserLang.toLowerCase() === "cn" || browserLang.toLowerCase() === "zh" || browserLang.toLowerCase() === "zh-cn") {
+    defaultBrowserLang = "zh";
+  } else {
+    defaultBrowserLang = "en";
+  }
+  return defaultBrowserLang;
+};
+
 /**
  * @description 递归查询对应的路由
  * @param {String} path 当前访问地址
